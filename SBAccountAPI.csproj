@@ -140,14 +140,36 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Context\Context.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\GroupVendorController.cs" />
+    <Compile Include="Controllers\GeneralWarehouseController.cs" />
+    <Compile Include="Controllers\GeneralTaxController.cs" />
+    <Compile Include="Controllers\CategoryProductController.cs" />
+    <Compile Include="Controllers\CategoryDepartmentController.cs" />
+    <Compile Include="Controllers\CategoryBrandController.cs" />
+    <Compile Include="Controllers\CategoryVendorController.cs" />
+    <Compile Include="Controllers\CategoryDesignationController.cs" />
+    <Compile Include="Controllers\CategoryCustomerController.cs" />
     <Compile Include="Controllers\ListCustomersController.cs" />
     <Compile Include="Controllers\SettingBrandController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GroupBranch.cs" />
+    <Compile Include="Models\GeneralWarehouse.cs" />
+    <Compile Include="Models\GeneralTax.cs" />
+    <Compile Include="Models\SettingAccount.cs" />
+    <Compile Include="Models\SettingCountry.cs" />
+    <Compile Include="Models\SettingParentProductCategory.cs" />
+    <Compile Include="Models\CategoryDesignation.cs" />
+    <Compile Include="Models\CategoryDepartment.cs" />
+    <Compile Include="Models\CategoryProduct.cs" />
+    <Compile Include="Models\CategoryBrand.cs" />
     <Compile Include="Models\ComboBox.cs" />
+    <Compile Include="Models\ListVendor.cs" />
     <Compile Include="Models\ListCustomer.cs" />
+    <Compile Include="Models\CategoryCustomer.cs" />
     <Compile Include="Models\SettingBrand.cs" />
+    <Compile Include="Models\CategoryVendor.cs" />
     <Compile Include="Models\SettingCurrency.cs" />
     <Compile Include="Models\SettingCustomerCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
