@@ -38,9 +38,19 @@ namespace SBAccountAPI.Context
 
 
         public virtual DbSet<GroupBranch> GroupBranches { get; set; }
+        public virtual DbSet<SaleQuotation> SaleQuotationes { get; set; }
 
 
         public virtual DbSet<GeneralTax> GeneralTaxes { get; set; }
         public virtual DbSet<GeneralWarehouse> GeneralWarehouses { get; set; }
+
+
+        public virtual DbSet<SaleGeographyRegion> SaleGeographyRegions { get; set; }
+        public virtual DbSet<SaleGeographyZone> SaleGeographyZones { get; set; }
+        public virtual DbSet<SaleGeographyTerritory> SaleGeographyTerritories { get; set; }
+        public virtual DbSet<SaleGeographyArea> SaleGeographyAreas { get; set; }
+        public virtual DbSet<SaleGeographySubArea> SaleGeographySubAreas { get; set; }
+
+        public virtual DbSet<SaleQuotation> SaleQuotations { get; set; }
     }
 }
