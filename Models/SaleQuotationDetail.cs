@@ -17,8 +17,13 @@ namespace SBAccountAPI.Models
         public int SaleQuotationDetailId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
-        public int Price { get; set; }
-        public int Discount { get; set; }
-        public int Amount { get; set; }
+        public decimal? Price { get; set; }
+        public decimal? Discount { get; set; }
+        public decimal? Amount { get; set; }
+        public bool IsDeleted { get; set; }
+        public string Description { get; set; }
+        //public string ProductDesc { get; set; }
+
+
     }
 }

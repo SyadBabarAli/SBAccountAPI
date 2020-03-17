@@ -161,6 +161,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AutoCompelete.cs" />
+    <Compile Include="Models\SettingStatus.cs" />
+    <Compile Include="Models\ListProduct.cs" />
+    <Compile Include="Models\ListSalePerson.cs" />
+    <Compile Include="Models\SaleQuotationDetail.cs" />
     <Compile Include="Models\SaleQuotation.cs" />
     <Compile Include="Models\SaleGeographyRegion.cs" />
     <Compile Include="Models\SaleGeographyArea.cs" />

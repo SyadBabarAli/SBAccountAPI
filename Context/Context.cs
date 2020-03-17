@@ -19,9 +19,14 @@ namespace SBAccountAPI.Context
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
         }
+
+        public virtual DbSet<SettingStatus> SettingStatuses { get; set; }
+
         public virtual DbSet<SettingBrand> SettingBrands { get; set; }
         public virtual DbSet<ListCustomer> ListCustomers { get; set; }
         public virtual DbSet<ListVendor> ListVendors { get; set; }
+        public virtual DbSet<ListSalePerson> ListSalePersons { get; set; }
+
         public virtual DbSet<SettingCustomerCategory> SettingCustomerCategories { get; set; }
         public virtual DbSet<SettingCurrency> SettingCurrencies { get; set; }
 
@@ -38,7 +43,7 @@ namespace SBAccountAPI.Context
 
 
         public virtual DbSet<GroupBranch> GroupBranches { get; set; }
-        public virtual DbSet<SaleQuotation> SaleQuotationes { get; set; }
+        //public virtual DbSet<SaleQuotation> SaleQuotationes { get; set; }
 
 
         public virtual DbSet<GeneralTax> GeneralTaxes { get; set; }
@@ -52,5 +57,14 @@ namespace SBAccountAPI.Context
         public virtual DbSet<SaleGeographySubArea> SaleGeographySubAreas { get; set; }
 
         public virtual DbSet<SaleQuotation> SaleQuotations { get; set; }
+        public virtual DbSet<ListProduct> ListProducts { get; set; }
+
+        public DbSet<SaleQuotationDetail> SaleQuotationDetails { get; set; }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ParentChildDb;Trusted_Connection=True;");
+        //}
     }
 }
+
