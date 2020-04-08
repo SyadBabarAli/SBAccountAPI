@@ -8,9 +8,9 @@ using System.Web;
 
 namespace SBAccountAPI.Context
 {
-    public class Context : DbContext
+    public class EntityContext : DbContext
     {
-        public Context() : base("name=SBAccount")
+        public EntityContext() : base("name=SBAccount")
         {
 
         }
@@ -20,6 +20,7 @@ namespace SBAccountAPI.Context
             base.OnModelCreating(modelBuilder);
         }
 
+        public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<SettingStatus> SettingStatuses { get; set; }
 
         public virtual DbSet<SettingBrand> SettingBrands { get; set; }
@@ -38,12 +39,11 @@ namespace SBAccountAPI.Context
         public virtual DbSet<CategoryDesignation> CategoryDesignations { get; set; }
 
         public virtual DbSet<SettingParentProductCategory> SettingParentProductCategories { get; set; }
-        public virtual DbSet<SettingAccount> SettingAccounts { get; set; }
+        //public virtual DbSet<SettingAccount> SettingAccounts { get; set; }
         public virtual DbSet<SettingCountry> SettingCountries { get; set; }
 
 
         public virtual DbSet<GroupBranch> GroupBranches { get; set; }
-        //public virtual DbSet<SaleQuotation> SaleQuotationes { get; set; }
 
 
         public virtual DbSet<GeneralTax> GeneralTaxes { get; set; }
@@ -61,10 +61,32 @@ namespace SBAccountAPI.Context
 
         public DbSet<SaleQuotationDetail> SaleQuotationDetails { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ParentChildDb;Trusted_Connection=True;");
-        //}
+        public virtual DbSet<SettingUnitOfMeasurment> SettingUnitOfMeasurments { get; set; }
+        public virtual DbSet<SettingInventoryAccount> SettingInventoryAccounts { get; set; }
+        public virtual DbSet<SettingAccount> SettingAccounts { get; set; }
+        public virtual DbSet<SettingSaleAccount> SettingSaleAccounts { get; set; }
+
+        public virtual DbSet<CategoryProductPrinciple> CategoryProductPrinciples { get; set; }
+        public virtual DbSet<SettingProductType> SettingProductTypes { get; set; }
+
+        public virtual DbSet<SaleInvoice> SaleInvoices { get; set; }
+        public virtual DbSet<SaleInvoiceDetail> SaleInvoiceDetails { get; set; }
+
+        public virtual DbSet<SaleRecurringInvoice> SaleRecurringInvoices { get; set; }
+        public virtual DbSet<SaleRecurringInvoiceDetail> SaleRecurringInvoiceDetails { get; set; }
+
+        public virtual DbSet<SettingFrequency> SettingFrequences { get; set; }
+
+        public virtual DbSet<SaleReturn> SaleReturns { get; set; }
+        public virtual DbSet<SaleReturnDetail> SaleReturnDetails { get; set; }
+
+        //public virtual DbSet<SaleReceiveMoney> SaleReceiveMones { get; set; }
+        //public virtual DbSet<SaleReceiveMoneyDetail> SaleReceiveMoneyDetails { get; set; }
+
+        public virtual DbSet<SettingPaymentMode> SettingPaymentMode { get; set; }
+
+        public virtual DbSet<SaleRefund> SaleRefunds { get; set; }
+        public virtual DbSet<SaleRefundDetail> SaleRefundDetails { get; set; }
     }
 }
 

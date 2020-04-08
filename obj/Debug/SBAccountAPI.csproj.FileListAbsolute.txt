@@ -82,6 +82,7 @@ C:\D-Drive\Project\SBAccountAPI\bin\EntityFramework.dll
 C:\D-Drive\Project\SBAccountAPI\bin\EntityFramework.SqlServer.dll
 C:\D-Drive\Project\SBAccountAPI\bin\EntityFramework.xml
 C:\D-Drive\Project\SBAccountAPI\bin\EntityFramework.SqlServer.xml
+E:\VisualStudioCode\SBAccountAPI\obj\Debug\SBAccountAPI.csprojAssemblyReference.cache
 E:\VisualStudioCode\SBAccountAPI\bin\SBAccountAPI.dll.config
 E:\VisualStudioCode\SBAccountAPI\bin\SBAccountAPI.dll
 E:\VisualStudioCode\SBAccountAPI\bin\SBAccountAPI.pdb
@@ -138,7 +139,9 @@ E:\VisualStudioCode\SBAccountAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerP
 E:\VisualStudioCode\SBAccountAPI\bin\Microsoft.Web.Infrastructure.dll
 E:\VisualStudioCode\SBAccountAPI\bin\Newtonsoft.Json.dll
 E:\VisualStudioCode\SBAccountAPI\bin\System.Net.Http.Formatting.dll
+E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Cors.dll
 E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Helpers.dll
+E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Http.Cors.dll
 E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Http.dll
 E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Http.WebHost.dll
 E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Mvc.dll
@@ -150,6 +153,7 @@ E:\VisualStudioCode\SBAccountAPI\bin\System.Web.WebPages.Razor.dll
 E:\VisualStudioCode\SBAccountAPI\bin\WebGrease.dll
 E:\VisualStudioCode\SBAccountAPI\bin\EntityFramework.xml
 E:\VisualStudioCode\SBAccountAPI\bin\EntityFramework.SqlServer.xml
+E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Http.Cors.xml
 E:\VisualStudioCode\SBAccountAPI\bin\Newtonsoft.Json.xml
 E:\VisualStudioCode\SBAccountAPI\bin\System.Net.Http.Formatting.xml
 E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Helpers.xml
@@ -166,7 +170,3 @@ E:\VisualStudioCode\SBAccountAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerP
 E:\VisualStudioCode\SBAccountAPI\obj\Debug\SBAccountAPI.csproj.CopyComplete
 E:\VisualStudioCode\SBAccountAPI\obj\Debug\SBAccountAPI.dll
 E:\VisualStudioCode\SBAccountAPI\obj\Debug\SBAccountAPI.pdb
-E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Cors.dll
-E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Http.Cors.dll
-E:\VisualStudioCode\SBAccountAPI\bin\System.Web.Http.Cors.xml
-E:\VisualStudioCode\SBAccountAPI\obj\Debug\SBAccountAPI.csprojAssemblyReference.cache

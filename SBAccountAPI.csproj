@@ -46,6 +46,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Attributes, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AutoMapper.Attributes.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -138,13 +146,21 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Context\Context.cs" />
+    <Compile Include="Controllers\DataTable.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\QueryableHelper.cs" />
+    <Compile Include="Controllers\SaleRefundController.cs" />
+    <Compile Include="Controllers\SaleReturnController.cs" />
+    <Compile Include="Controllers\SaleRecurringInvoiceController.cs" />
+    <Compile Include="EntityContext\EntityContext.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ListProductController.cs" />
     <Compile Include="Controllers\SaleGeographyTerritoryController.cs" />
     <Compile Include="Controllers\SaleGeographyZoneController.cs" />
     <Compile Include="Controllers\SaleGeographyAreaController.cs" />
     <Compile Include="Controllers\SaleGeographyRegionController.cs" />
     <Compile Include="Controllers\SaleGeographySubAreaController.cs" />
+    <Compile Include="Controllers\SaleInvoiceController.cs" />
     <Compile Include="Controllers\SaleQuotationController.cs" />
     <Compile Include="Controllers\GroupBranchController.cs" />
     <Compile Include="Controllers\GeneralWarehouseController.cs" />
@@ -157,10 +173,53 @@
     <Compile Include="Controllers\CategoryCustomerController.cs" />
     <Compile Include="Controllers\ListCustomersController.cs" />
     <Compile Include="Controllers\SettingBrandController.cs" />
+    <Compile Include="Controllers\SettingBrandsController.cs" />
+    <Compile Include="Controllers\TablePaging.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelCustom\GeneralWarehouseModel.cs" />
+    <Compile Include="ModelCustom\CurrencyModel.cs" />
+    <Compile Include="ModelCustom\SaleRefundDetailModel.cs" />
+    <Compile Include="ModelCustom\SaleRefundModel.cs" />
+    <Compile Include="ModelCustom\SaleReceiveMoneyDetailModel.cs" />
+    <Compile Include="ModelCustom\SaleReceiveMoneyModel.cs" />
+    <Compile Include="ModelCustom\SaleRecurringInvoiceDetailModel.cs" />
+    <Compile Include="ModelCustom\SaleRecurringInvoiceModel.cs" />
+    <Compile Include="ModelCustom\SalePersonModel.cs" />
+    <Compile Include="ModelCustom\SaleInvoiceDetailModel.cs" />
+    <Compile Include="ModelCustom\GroupBrancheModel.cs" />
+    <Compile Include="ModelCustom\SaleQuotationDetailModel.cs" />
+    <Compile Include="ModelCustom\ListProductModel.cs" />
+    <Compile Include="ModelCustom\SaleQuotationModel.cs" />
+    <Compile Include="ModelCustom\SaleReturnModel.cs" />
+    <Compile Include="ModelCustom\SaleReturnDetailModel.cs" />
     <Compile Include="Models\AutoCompelete.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\Entities\EntityBase.cs" />
+    <Compile Include="Models\Entities\Todo.cs" />
+    <Compile Include="Models\SaleRefundDetail.cs" />
+    <Compile Include="Models\SaleRefund.cs" />
+    <Compile Include="Models\SaleReceiveMoneyDetail.cs" />
+    <Compile Include="Models\SaleReceiveMoney.cs" />
+    <Compile Include="Models\SettingPaymentMode.cs" />
+    <Compile Include="Models\ModelMapper.cs" />
+    <Compile Include="Models\PagedResults.cs" />
+    <Compile Include="Models\SaleRecurringInvoice.cs" />
+    <Compile Include="Models\SaleRecurringInvoiceDetail.cs" />
+    <Compile Include="Models\SaleInvoiceDetail.cs" />
+    <Compile Include="Models\SaleInvoice.cs" />
+    <Compile Include="ModelCustom\SaleInvoiceModel.cs" />
+    <Compile Include="Models\SaleReturnDetail.cs" />
+    <Compile Include="Models\SaleReturn.cs" />
+    <Compile Include="Models\SettingFrequancy.cs" />
+    <Compile Include="Models\SettingProdcutType.cs" />
+    <Compile Include="Models\CategoryProductPrinciple.cs" />
+    <Compile Include="Models\SettingSaleAccount.cs" />
+    <Compile Include="Models\SettingInventoryAccount.cs" />
+    <Compile Include="Models\SettingUnitOfMeasurment.cs" />
     <Compile Include="Models\SettingStatus.cs" />
     <Compile Include="Models\ListProduct.cs" />
     <Compile Include="Models\ListSalePerson.cs" />
@@ -189,7 +248,9 @@
     <Compile Include="Models\CategoryVendor.cs" />
     <Compile Include="Models\SettingCurrency.cs" />
     <Compile Include="Models\SettingCustomerCategory.cs" />
+    <Compile Include="Models\TodoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IEmployeeService.cs" />
     <Compile Include="Utility\General.cs" />
     <Compile Include="Utility\SqlHelper.cs" />
     <Compile Include="Utility\SupportingFunctions.cs" />

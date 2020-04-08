@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using SBAccountAPI.Context;
 using SBAccountAPI.Models;
 
 namespace SBAccountAPI.Controllers
@@ -15,7 +16,7 @@ namespace SBAccountAPI.Controllers
     [RoutePrefix("api/GeneralTax")]
     public class GeneralTaxController : BaseController
     {
-        private Context.Context db = new Context.Context();
+        private EntityContext db = new EntityContext();
 
         [Route("GetGeneralTaxs")]
         public IQueryable<GeneralTax> GetGeneralTaxs()
@@ -33,7 +34,7 @@ namespace SBAccountAPI.Controllers
                           orderby t1.Name ascending
                           select new ComboBox
                           {
-                              value = t1.AccountId,
+                              value = t1.SettingAccountId,
                               text = t1.Name
                           }).AsQueryable();
 

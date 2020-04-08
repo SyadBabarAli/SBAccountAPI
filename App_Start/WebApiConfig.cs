@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using AspNetPagingExample.Models;
 
 namespace SBAccountAPI
 {
@@ -11,6 +12,8 @@ namespace SBAccountAPI
 
         public static void Register(HttpConfiguration config)
         {
+            ModelMapper.Init();
+
             // Web API configuration and services
 
             // Web API routes

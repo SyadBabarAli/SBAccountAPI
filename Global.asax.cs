@@ -20,7 +20,7 @@ namespace SBAccountAPI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 
             //...
-            Database.SetInitializer<Context.Context>(null);
+            Database.SetInitializer<EntityContext>(null);
             //Database.SetInitializer<GhostIRTypeContext>(new DropCreateDatabaseIfModelChanges<GhostIRTypeContext>());
 
             //RouteConfig.RegisterRoutes(RouteTable.Routes);

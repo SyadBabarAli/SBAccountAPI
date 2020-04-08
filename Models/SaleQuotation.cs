@@ -19,22 +19,22 @@ namespace SBAccountAPI.Models
         public DateTime? ExpiryDate { get; set; }
         public string Reference { get; set; }
         public int BranchId { get; set; }
-        public int? SalePersonId { get; set; }
+        public int SalePersonId { get; set; }
         public int CurrencyId { get; set; }
         public string Term { get; set; }
-        public int AttachedId { get; set; }
-        public bool IsActive { get; set; }
-        public bool IsDeleted { get; set; }
+        public int? AttachedId { get; set; }
+        public bool? IsActive { get; set; }
+        public bool? IsDeleted { get; set; }
 
-        public int? GrossAmount { get; set; }
-        public int? NetAmount { get; set; }
         public int? SettingStatusId { get; set; }
 
-        //public string CustomerName { get; set; }
-        //public string BranchName { get; set; }
-        //public string SalePersonName { get; set; }
-        //public string StatusName  { get; set; }
 
+        public decimal? GrossAmount { get; set; }
+        public decimal? NetAmount { get; set; }
+        public decimal? ExchangeRate { get; set; }
+        public decimal? TaxAmount { get; set; }
+        public decimal? DiscountPercent { get; set; }
+        public decimal? DiscountAmount { get; set; }
 
         public List<SaleQuotationDetail> saleQuotationDetail { get; set; }
     }

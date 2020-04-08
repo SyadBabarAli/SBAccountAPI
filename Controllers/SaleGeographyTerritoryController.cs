@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using SBAccountAPI.Context;
 using SBAccountAPI.Models;
 
 namespace SBAccountAPI.Controllers
@@ -15,7 +16,7 @@ namespace SBAccountAPI.Controllers
     [RoutePrefix("api/SaleGeographyTerritory")]
     public class SaleGeographyTerritoryController : BaseController
     {
-        private Context.Context db = new Context.Context();
+        private EntityContext db = new EntityContext();
 
         [Route("GetSaleGeographyTerritories")]
         public IQueryable<SaleGeographyTerritory> GetSaleGeographyTerritories()

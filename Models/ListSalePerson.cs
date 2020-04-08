@@ -14,8 +14,8 @@ namespace SBAccountAPI.Models
         [Key, Column(Order = 1)]
         public int SalePersonId { get; set; }
         public string SalePersonName { get; set; }
-        public bool IsOrderBooker { get; set; }
-        public bool IsDelievery { get; set; }
-        public bool IsSaleMan { get; set; }
+        public bool? IsOrderBooker { get; set; }
+        public bool? IsDelievery { get; set; }
+        public bool? IsSaleMan { get; set; }
     }
 }

@@ -1,12 +1,18 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using SBAccountAPI.Context;
+using SBAccountAPI.ModelCustom;
 using SBAccountAPI.Models;
 
 namespace SBAccountAPI.Controllers
@@ -15,14 +21,31 @@ namespace SBAccountAPI.Controllers
     [RoutePrefix("api/GroupBranch")]
     public class GroupBranchController : BaseController
     {
-        private Context.Context db = new Context.Context();
+        private readonly EntityContext db = new EntityContext();
 
+        [HttpPut]
         [Route("GetGroupBranches")]
-        public IQueryable<GroupBranch> GetGroupBranches()
+        public IHttpActionResult GetGroupBranches(PagedResult<GroupBranchModel> pagedResult)
         {
-            var result = db.GroupBranches.Where(w => w.IsDeleted == false);
-            return result;
+            IQueryable<GroupBranchModel> source = (from t1 in db.GroupBranches
+                                                   select new GroupBranchModel
+                                                   {
+                                                       CompanyId = t1.CompanyId,
+                                                       GroupBranchId = t1.GroupBranchId,
+                                                       Name = t1.Name,
+                                                       IsActive = t1.IsActive,
+                                                   });
+
+            var result = source.GetTable<GroupBranchModel>(pagedResult);
+            return Ok(result);
         }
+
+        //[Route("GetGroupBranches")]
+        //public IQueryable<GroupBranch> GetGroupBranches()
+        //{
+        //    var result = db.GroupBranches.Where(w => w.IsDeleted == false);
+        //    return result;
+        //}
 
         [ResponseType(typeof(void))]
         [Route("Put")]

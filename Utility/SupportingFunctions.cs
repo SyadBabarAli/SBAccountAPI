@@ -8,12 +8,129 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Reflection;
 using System.Web;
+using SBAccountAPI.Models;
 
 namespace SBAccountAPI.Utility
 {
     public class SupportingFunctions
     {
+
+        //
+        public List<AutoCompelete> GetList(string pQuery)
+        {
+            SupportingFunctions supportingFunctions = new SupportingFunctions();
+            string query = pQuery;
+            DataTable objDataTable = supportingFunctions.QueryIntoDataTable(query);
+            List<AutoCompelete> objModelList = new List<AutoCompelete>();
+            objModelList = ConvertDataTable<AutoCompelete>(objDataTable);
+
+            return objModelList;
+        }
+
+        public static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
+        public string GenerateProposedNumber(string number)
+        {
+            string OriginalString = number;
+            string ReverseString = Reverse(OriginalString);
+
+            string ReverseNumber = string.Empty;
+            string Result;
+
+            int cnt = 0;
+            for (int i = 0; i < ReverseString.Length; i++)
+            {
+                if (Char.IsDigit(ReverseString[i]))
+                {
+                    ReverseNumber += ReverseString[i];
+                }
+                else
+                {
+                    break;
+                }
+                cnt++;
+            }
+
+            string OriginalNumber = OriginalString.Substring((OriginalString.Length) - cnt, cnt);
+            int OriginalNumberIncremented = OriginalNumber == "" ? 1 : Convert.ToInt32(OriginalNumber) + 1;
+
+            string Prifix = OriginalString.Substring(0, (OriginalString.Length) - cnt);
+            Result = Prifix + OriginalNumberIncremented;
+
+            return Result;
+        }
+
+        public List<T> ConvertDataTable2<T>(DataTable dt)
+        {
+            List<T> data = new List<T>();
+            foreach (DataRow row in dt.Rows)
+            {
+                T item = GetItem<T>(row);
+                data.Add(item);
+            }
+            return data;
+        }
+
+        private static List<T> ConvertDataTable<T>(DataTable dt)
+        {
+            List<T> data = new List<T>();
+            foreach (DataRow row in dt.Rows)
+            {
+                T item = GetItem<T>(row);
+                data.Add(item);
+            }
+            return data;
+        }
+        private static T GetItem<T>(DataRow dr)
+        {
+            Type temp = typeof(T);
+            T obj = Activator.CreateInstance<T>();
+
+            foreach (DataColumn column in dr.Table.Columns)
+            {
+                foreach (PropertyInfo pro in temp.GetProperties())
+                {
+                    if (pro.Name == column.ColumnName)
+                    {
+                        pro.SetValue(obj, dr[column.ColumnName], null);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
+            return obj;
+        }
+        private static T GetItem2<T>(DataRow dr)
+        {
+            Type temp = typeof(T);
+            T obj = Activator.CreateInstance<T>();
+
+            foreach (DataColumn column in dr.Table.Columns)
+            {
+                foreach (PropertyInfo pro in temp.GetProperties())
+                {
+                    if (pro.Name == column.ColumnName)
+                    {
+                        pro.SetValue(obj, dr[column.ColumnName], null);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
+            return obj;
+        }
+        //
         /////////////////////////////////////////////////////////////////////////////////Supporting Functions///////////////////////////////////////////////////////////
         public static string strFeedbackDB = ConfigurationManager.ConnectionStrings["SBAccount"].ConnectionString;
         public static string strTicketDB = ConfigurationManager.ConnectionStrings["SBAccount"].ConnectionString;

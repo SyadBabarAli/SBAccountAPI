@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using SBAccountAPI.Context;
 using SBAccountAPI.Models;
 
 namespace SBAccountAPI.Controllers
@@ -15,7 +16,8 @@ namespace SBAccountAPI.Controllers
     [RoutePrefix("api/CategoryDepartment")]
     public class CategoryDepartmentController : BaseController
     {
-        private Context.Context db = new Context.Context();
+        EntityContext db = new EntityContext();
+
 
         [Route("GetCategoryDepartments")]
         public IQueryable<CategoryDepartment> GetCategoryDepartments()
